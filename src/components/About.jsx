@@ -1,6 +1,9 @@
 import React from 'react';
 
-function About () {
+function About (props) {
+    const { match } = props;
+    console.log(match);
+
     return (
         <div>
             <h1>アバウトページです！</h1>
