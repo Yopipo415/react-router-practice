@@ -4,15 +4,13 @@ import Button from "../Button/Button";
 const Home = ({ history }) => {
     return (
         <div>
-            <h1>Welcome to the Quiz App!</h1>
-            <br/>
-            <br/>
+            <h1>Homeです！</h1>
             <Button 
                 onClickHandler={() => {
                     history.push('/quiz');
                 }}
             >
-                Let's start!!
+                クイズページへ移動
             </Button>
         </div>
     );

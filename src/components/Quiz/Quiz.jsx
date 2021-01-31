@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import QuizModel from '../../models/Quiz';
 import Button from "../Button/Button";
-import './Quiz.css';
 
 class Quiz extends React.Component {
     constructor (props) {
@@ -60,18 +59,18 @@ class Quiz extends React.Component {
             return this.renderQuiz();
         }
 
-        if (quizzes.length > 0 && currentIndex >= quizzes.length) {
-            return this.renderResult();
-        }
+        return (
+            <h1>Quizです!!！</h1>
+        );
     }
 
     renderLoading () {
         return (
             <div>
-                <h1>Please wait...</h1>
+                <h1>クイズページ</h1>
                 <p>Now loading...</p>
                 <hr/>
-                <Link to="/">Back to the Top</Link>
+                {/* <Link to="/">トップページへ</Link> */}
             </div>
         );
     }
@@ -94,33 +93,13 @@ class Quiz extends React.Component {
 
         return (
             <div>
-                <h1>Question : { currentIndex + 1 }</h1>
+                <h1>クイズページ</h1>
                 <div>
                     <p>{quiz.question}</p>
                     <ul className="QuizList">{answers}</ul>
                 </div>
                 <hr/>
-                <Link to="/">Back to the Top</Link>
-            </div>
-        );
-    }
-
-    renderResult () {
-        const { quizzes, numberOfCorrects } = this.state;
-
-        return (
-            <div>
-                <h1>Your result is...</h1>
-                <div>
-                    <p id="result">{`${numberOfCorrects}/${quizzes.length} corrects.`}</p>
-                    <Button
-                        onClickHandler={() => {this.restart()}}
-                    >
-                        Restart?
-                    </Button>
-                </div>
-                <hr/>
-                <Link to="/">Back to the Top</Link>
+                {/* <Link to="/">トップページへ</Link> */}
             </div>
         );
     }
